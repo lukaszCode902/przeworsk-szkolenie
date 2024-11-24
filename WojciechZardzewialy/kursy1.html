@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurs</title>
+
+
+    <style>
+
+        
+
+
+
+    </style>
+</head>
+<body>
+
+    <!-- div>p>th>td    To jest Emmet czyli stworzy kawał skryptu z tego                 -->
+
+    <!-- 
+    <div id="p_d">
+        <p>
+            <th>
+                <td><h1>Tekst</h1></td>    np:
+            </th>
+        </p>
+    </div> 
+    -->
+<!-- 
+    <div id="film1">
+        <a href="https://swapi.dev/api/films/1/"></a>
+    </div>
+
+    <div id="film2">
+        <a href="https://swapi.dev/api/films/2/"></a>
+    </div>
+
+    <div id="film3">
+        <a href="https://swapi.dev/api/films/3/"></a>
+    </div>
+    
+    <div>
+        <a href="https://swapi.dev/api/films/6/"></a>
+    </div> 
+    -->
+
+    <div id="filmContainer">
+
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+
+
+    </div>
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+// Typy danych
+
+// 1.Typy proste zmiennych w js
+
+// String - Text - "Kota ma Alę"
+// Number
+// Boolean
+// Null/Undefined
+// Symbol
+
+var zmienna = "tak"
+console.log("nie" , zmienna)
+
+// 2.Typy złożone w js
+
+// Tablica - Arrray []
+// Obiekt - Object {}
+
+var tablicaZnaków = [1,2,3] // zapisana nazwa jest Cammel casem czyli piersza litera mała a potem duża
+console.log(tablicaZnaków.length)
+tablicaZnaków.push("Kota ma Alę")
+console.log(tablicaZnaków)
+
+// metoda .trim usuwa białe znaki
+// np do stringa
+
+
+
+// Obiekty
+var osoba =
+{
+    imie:  "Jan",
+    wiek: 60,
+    czy_dorosły: true,
+    d_urodzenia:  1000
+
+}
+
+console.log(osoba.imie)
+
+osoba.płeć = "Byt astralny"
+console.log(osoba)
+
+osoba.obliczWiek = function()
+{
+    var aktualnyRok = 2024
+    var wynik = aktualnyRok - osoba.d_urodzenia
+    console.log("Wiek osoby jest około :" + osoba.wiek)
+    return osoba.wiek
+}
+
+console.log(osoba)
+
+osoba.obliczWiek()
+
+// Ebać angielski go 
+
+function displayName(imie)
+{
+    console.log(imie)
+}
+
+let displayNamee = (imie) => console.log(imie)
+
+displayNamee(30)
+
+//
+
+
+const Arrray = [1,2,3,4,5]
+console.log(Arrray)
+
+
+const objectArray =
+[
+    {
+        name: "Agata",
+        age: "30",
+        gender: "female",
+        isAdult: true
+    },
+
+    {
+        name: "Jan",
+        age: "44",
+        gender: "male",
+        isAdult: true
+    },
+
+    {
+        name: "Kazik",
+        age: "12",
+        gender: "male",
+        isAdult: false
+    },
+
+    {
+        name: "Marcin",
+        age: "25",
+        gender: "male",
+        isAdult: true,
+        users:
+        [
+            {car:"Audi"},
+            {productionYear: 2015},
+            {color: "red"}
+        ]
+    }
+]
+
+
+console.log(objectArray[3].name)
+
+for(let i = 0; i < objectArray.length; i++)
+{
+    if(objectArray[i].name === "Marian")
+    {    
+    console.log(objectArray[i])
+
+    }   
+}
+
+
+// const foundElement = objectsArray.find((element)) => element
+
+
+let findObject = objectArray.find((element) => element.name === "Marcin" ? element : null) // to na końcu to skrócony else
+console.log('object', findObject)
+
+// findObject.users.map((item) => console.log(Object.values(item)))
+findObject.users.map((item) => console.log(`${Object.values(item)}`))
+
+//$(osoba) // To kowertuje zmienną na stringa
+
+
+let lucasAge = 20
+let agataAge = 20
+
+lucasAge == agataAge
+console.log(lucasAge === agataAge)
+
+//= //przypisuje zmienną
+//== // sprawdza wartość 
+//=== //sprawdza i typ zmiennej i wartość
+
+
+
+// Pobieranie danych z API tj. backendu
+
+// const apiUrl = "https://pokeapi.co/api/v2/pokemon" // ciekwy link
+
+// async function fetchPokemondata () 
+// {
+//     try
+//     {
+//         //Wykonanie zapytania get
+//         const response = await fetch(apiUrl);
+//         const user = fetchUser(apiUrl);
+//         await regiserUser(user);
+//         loginUser(user)
+
+//     }
+//     catch (error)
+//     {
+//         console.error("Błąd podczas pobierania danych", error)
+//     }
+// }
+// //Wywołanie funckji
+// fetchPokemondata();
+
+
+
+
+
+
+
+
+
+const apiUrl = "https://swapi.dev/api/films/";
+
+async function fetchSWAPI() {
+    try {
+        // pobranie z api
+        const response = await fetch(apiUrl);
+        const films = await response.json();
+
+        // Div z góry
+        const filmContainer = document.getElementById("filmContainer");
+
+        // Doaje linki do nazw filmów z JSON-a 
+        films.results.forEach(film => {
+            const filmDiv = document.createElement("div");
+            const filmLink = document.createElement("a");
+            filmLink.href = film.url;
+            filmLink.textContent = film.title; // Konwersja nazwy z JSON-a
+            filmLink.target = "_blank"; // Nowa karta
+            filmDiv.appendChild(filmLink);
+            filmContainer.appendChild(filmDiv);
+        });
+    } 
+    
+    catch (error) 
+
+    {
+        console.error("Błąd podczas pobierania danych", error);
+    }
+}
+
+// wywołanie funkcji
+fetchSWAPI();
+
+
+
+
+
+// Strony z kursów
+
+//https://developer.mozilla.org/en-US/docs/MDN/Community/Contributing/Our_repositories
+
+//https://www.w3schools.com/
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+</body>
+</html>
