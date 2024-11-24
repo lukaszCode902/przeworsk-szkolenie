@@ -16,3 +16,5 @@
 # 2 - Wypchnięcie brancha na repozytorium zdalnie: git push origin <nazwa_brancha> - Wcześniej jednak należy upewnić się że dodaliśmy plikim, zrobiliśmy git add ., git commit -m, i dopiero push z branchem.
 
 
+
+zmiana z brancha Search
