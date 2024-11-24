@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes animacja{
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Dzień dobry</h1>
+
+    <div>
+        <div class="text">
+            <p style="background-color: red; height: 200px; min-width: 300px; max-width: 1000px;">Ala ma kota</p>
+        </div>
+    </div>
+    
+    
+    <script>
+    // var name = 'name'
+
+
+
+    // // tablica = []
+    // // obiekt = {}
+
+    // var num = [1,2,3]
+    // console.log(num[0])
+
+    // console.log(num)
+
+    // //obiekt
+
+    // // {
+    // //     klucz:wartość
+    // // }
+
+    // var person = {
+    //     name:"name",
+    //     isadult: true,
+    //     age: 20,
+    //     rok_urodzenia: 2004
+    // }
+    // person.gender = "helikopter"
+    // delete person.gender
+
+    // console.log(person)
+
+    // person.liczwiek = function(){
+    //     let data = person.rok_urodzenia;
+    //     let rok = 2024;
+    //     let wynik = rok-data;
+    //     return wynik
+    // }
+    // person.liczwiek()
+
+    // console.log(person)
+
+
+    // function display(name){
+    //     console.log(name)
+    // }
+
+    // display(30);
+
+    // var osoby = [
+    //     {
+    //      name:"name1",
+    //     isadult: true,
+    //     age: 20,
+    //     rok_urodzenia: 2004
+    //     },
+    //     {
+    //     name:"name2",
+    //     isadult: true,
+    //     age: 20,
+    //     rok_urodzenia: 2004,
+    //     tablica: [
+    //         {
+    //             num1:1,
+    //             num2:2
+    //         }
+    //     ]
+    //     },
+    //     {
+    //      name:"name3",
+    //     isadult: true,
+    //     age: 20,
+    //     rok_urodzenia: 2004
+    //     }
+
+
+    // ]
+
+    // // console.log(osoby[2].name)
+
+    // // for(i=0; i<osoby.length ; i++){
+    // //     if(osoby[i].name === "name3"){
+    // //         console.log(osoby[i])
+    // //     }
+    // // }
+    // console.log(osoby[1].tablica[0])
+    // console.log(osoby[1].tablica[0])
+    // let a = osoby[1].tablica[0];
+    // console.log(a)
+    // console.log(a.num1)
+
+    // const znajdzelement = osoby.find((element)) => (element)
+
+    // znajdzelement.osoby.map((item) => console.log(item))
+    
+    
+    
+    
+    // $(osoba)
+
+    // let banan = 10
+    // let mango = 10
+
+    // if(banan == mango){
+    //     console.log('banan i mango')
+    // }
+    
+    // if(banan === mango){
+    //     console.log('banan bez mango')
+    // }
+
+    // pobieranie danych z api
+
+    const apiUrl = "https://swapi.dev/api/people/1/"
+    async function fetchSwapi() {
+        try{
+            const fetchUser = await fetchUser(apiUrl)
+            const user = await registerUser(apiUrl)
+            const loginUser = await loginUser(apiUrl)
+            loginUser(user)
+        }
+        catch(error){
+            console.error('Błąd', error)
+        }
+        
+        
+    }
+   fetchSwapi()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </script>
+</body>
+</html>
+
+<!-- https://developer.mozilla.org/en-US/ -->
+<!-- https://www.w3schools.com/ -->
+
