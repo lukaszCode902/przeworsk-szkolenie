@@ -17,5 +17,5 @@
 
 # Stworzenie pull requestu - prośby o dołączenie zmian do głównej gałęzi (code review - sprawdzenie kodu). Wchodzimy na github w zakładkę "Pull Requests" wybieramy nasz branch, po lewej stronie upewniamy się ze chcemy ten nasz branch przyłączyć do głównej gałężi, sprawdzamy wskazane różnice (upewniamy się, że to jest ten kod, który chcemy wrzucić), klikamy "Create Pull Requests" oznaczamy osobę do sprawdzenia kodu w zakładce "Reviewrs" i czekamy na akcept osoby sprawdzającej, gdy taki akcept mamy klikamy zielony przycisk "Merge Pull Request"
 
-
+a
 tralalala
