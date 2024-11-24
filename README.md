@@ -7,4 +7,3 @@
 # 4 - Wyrzucenie zmian /gotowego commita na zdalne repozytorium github - git push origin (nazwa_brancha - main) - git push origin main..
 
 
-
